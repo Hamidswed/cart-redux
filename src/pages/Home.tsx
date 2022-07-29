@@ -3,7 +3,7 @@ import hero from './../Assets/images/hero.jpg'
 
 const Home: React.FC = () => {
   return (
-    <div className="hero min-h-screen">
+    <div className="hero">
         <img src={hero}/>
       <div className="hero-overlay bg-opacity-60"></div>
       <div className=" text-center text-neutral-content">

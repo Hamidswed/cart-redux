@@ -20,15 +20,15 @@ const Header: React.FC = () => {
 
   return (
     <div className="navbar bg-base-100">
-      <div className="flex-1">
+      <div className="w-[20%]">
         <a className="btn btn-ghost normal-case text-xl">Pixtore</a>
       </div>
-      <div className="flex-1 normal-case text-base text-gray-500 space-x-8">
-        <Link to='/'className="hover:text-[#4506CB]">Home</Link>
-        <Link to='/store' className="hover:text-[#4506CB]">Store</Link>
-        <Link to='/about' className="hover:text-[#4506CB]">About</Link>
+      <div className="w-[60%] normal-case text-base text-gray-500 space-x-8 justify-center">
+        <Link to='/'className="transition duration-300 ease-in-out hover:text-[#4506CB]">Home</Link>
+        <Link to='/store' className="transition duration-300 ease-in-out hover:text-[#4506CB]">Store</Link>
+        <Link to='/about' className="transition duration-300 ease-in-out hover:text-[#4506CB]">About</Link>
       </div>
-      <div className="flex-none">
+      <div className="flex w-[20%] justify-end">
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
