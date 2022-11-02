@@ -15,7 +15,7 @@ const Product: React.FC<CartItem> = ({
   const dispatch = useDispatch();
   const [storeIndex, setStoreIndex] = useState(-1);
   const [storeCount, setStoreCount] = useState(0);
-  useEffect(() => {
+  useEffect(():void => {
     const index = carts.findIndex(function (item: CartItem) {
       return item.productId === productId;
     });
@@ -24,14 +24,14 @@ const Product: React.FC<CartItem> = ({
     setStoreCount(carts[index].productCount);
   });
   const add = () => {
-    const data: CartItem = {
+    const cartItemsSample: CartItem = {
       productId,
       productName,
       productPrice,
       productImage,
       productCount,
     };
-    dispatch(addToCart(data));
+    dispatch(addToCart(cartItemsSample));
   };
   return (
     <div className="flex space-x-4 mx-4 card w-96 bg-base-100 shadow-xl">

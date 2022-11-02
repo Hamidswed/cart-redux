@@ -8,20 +8,14 @@ import {
   removeAll,
   removeFromCart,
 } from "../../features/counter/cartSlice";
+import { calcTotalPrice } from "../../lib/product";
+
 
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const carts = useSelector((state: RootState) => state.cart.value);
   const [totalPrice, setTotalPrice] = useState<number>(0); // why did we use 'useState' for the calculation?
-  const calcTotalPrice = () => {
-    let tPrice: number = 0;
-    for (let i = 0; i < carts.length; i++) {
-      const product = carts[i];
-      tPrice += product.productPrice * product.productCount;
-    }
-    setTotalPrice(tPrice);
-  };
-  useEffect(calcTotalPrice);
+  useEffect(()=>{setTotalPrice(calcTotalPrice(carts))});
   return (
     <div className="overflow-x-auto pt-20 px-40">
       <table className="table table-zebra w-full">
