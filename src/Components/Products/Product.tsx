@@ -20,9 +20,10 @@ const Product: React.FC<CartItem> = ({
       return item.productId === productId;
     });
     setStoreIndex(index);
-    if (index>=0)
+    if (index>=0) {
     setStoreCount(carts[index].productCount);
-  });
+    }
+  },[carts, productId]);
   const add = () => {
     const cartItemsSample: CartItem = {
       productId,

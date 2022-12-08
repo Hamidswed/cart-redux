@@ -26,7 +26,8 @@ export const cartSlice = createSlice({
       const index = temp.findIndex(function (item: CartItem) {
         return item.productId === action.payload.productId;
       });
-      if (index < 0) temp.push(action.payload); //????
+      if (index < 0) { temp.push(action.payload); //????
+}
       else {
         temp[index].productCount += 1;
       }
@@ -39,7 +40,8 @@ export const cartSlice = createSlice({
         return item.productId === action.payload;
       });
       if (temp[index].productCount === 1) {
-        if (index >= 0) temp.splice(index, 1); //remove item based on index
+        if (index >= 0) { temp.splice(index, 1); //remove item based on index
+}
       } else {
         temp[index].productCount -= 1;
       }
@@ -50,10 +52,10 @@ export const cartSlice = createSlice({
       const index = temp.findIndex(function (item: CartItem) {
         return item.productId === action.payload;
       });
-      if (index >= 0) temp.splice(index, 1); 
+      if (index >= 0) { temp.splice(index, 1); }
       state.value = temp;
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
